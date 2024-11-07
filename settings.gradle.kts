@@ -30,3 +30,4 @@ dependencyResolutionManagement {
 
 include(":composeApp")
 include(":datasource:repository")
+include("feature:textarea")

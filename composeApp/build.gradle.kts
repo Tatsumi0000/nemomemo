@@ -22,6 +22,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(project(":datasource:repository"))
+            implementation(project(":feature:textarea"))
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
