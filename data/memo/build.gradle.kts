@@ -8,10 +8,9 @@ plugins {
 
 kotlin {
 
-    jvm()
+    jvm("desktop")
 
     sourceSets {
-        val desktopMain by commonMain
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -25,9 +24,14 @@ kotlin {
             // Room
             implementation(libs.room.runtime)
         }
+        val desktopMain by getting
+        desktopMain.dependencies {
+
+        }
     }
 }
 
 dependencies {
-    add("kspJvm", libs.room.compiler)
+    add("kspDesktop", libs.room.compiler)
+}
 }
