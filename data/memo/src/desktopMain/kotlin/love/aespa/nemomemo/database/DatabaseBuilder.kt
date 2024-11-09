@@ -4,9 +4,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import java.io.File
 
-//fun getDatabaseBuilder(): RoomDatabase.Builder<MemoDatabase> {
-//    val dbFile = File(System.getProperty("java.io.tmpdir"), "nemomemo.db")
-//    return Room.databaseBuilder<MemoDatabase>(
-//        name = dbFile.absolutePath,
-//    )
-//}
+fun getDatabaseBuilder(): RoomDatabase.Builder<MemoDatabase> {
+    val dbFile = File(System.getProperty("java.io.tmpdir"), "nemomemo.db")
+    return Room.databaseBuilder<MemoDatabase>(
+        name = dbFile.absolutePath,
+    )
+}
