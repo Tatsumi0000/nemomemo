@@ -11,10 +11,10 @@ import love.aespa.nemomemo.database.entity.Memo
 @Dao
 interface MemoDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(item: Memo)
+    suspend fun insert(memo: Memo)
 
     @Update(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun update(item: Memo)
+    suspend fun update(memo: Memo)
 
     @Query("SELECT * FROM memos ORDER BY id ASC")
     fun getAllMemosOrderByIdAsc(): Flow<List<Memo>>
