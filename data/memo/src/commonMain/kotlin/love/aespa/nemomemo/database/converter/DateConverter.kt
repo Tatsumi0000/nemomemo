@@ -1,4 +1,4 @@
-package love.aespa.nemomemo.converter
+package love.aespa.nemomemo.database.converter
 
 import androidx.room.TypeConverter
 import java.util.Date

@@ -7,9 +7,9 @@ import androidx.room.RoomDatabaseConstructor
 import androidx.room.TypeConverters
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
 import kotlinx.coroutines.Dispatchers
-import love.aespa.nemomemo.converter.DateConverter
-import love.aespa.nemomemo.dao.MemoDao
-import love.aespa.nemomemo.entity.Memo
+import love.aespa.nemomemo.database.converter.DateConverter
+import love.aespa.nemomemo.database.dao.MemoDao
+import love.aespa.nemomemo.database.entity.Memo
 
 @Database(entities = [Memo::class], version = 1)
 @ConstructedBy(MemoDatabaseConstructor::class)

@@ -1,4 +1,4 @@
-package love.aespa.nemomemo.dao
+package love.aespa.nemomemo.database.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -6,7 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
-import love.aespa.nemomemo.entity.Memo
+import love.aespa.nemomemo.database.entity.Memo
 
 @Dao
 interface MemoDao {

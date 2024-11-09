@@ -1,4 +1,4 @@
-package love.aespa.nemomemo.entity
+package love.aespa.nemomemo.database.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
