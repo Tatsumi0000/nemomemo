@@ -21,7 +21,7 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
-            implementation(project(":data:repository"))
+            implementation(project(":data:memo"))
             implementation(project(":feature:textarea"))
         }
         desktopMain.dependencies {

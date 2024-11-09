@@ -29,5 +29,5 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
-include(":data:repository")
+include(":data:memo")
 include(":feature:textarea")
