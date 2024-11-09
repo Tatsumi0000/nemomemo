@@ -24,9 +24,10 @@ kotlin {
             // Room
             implementation(libs.room.runtime)
         }
+
         val desktopMain by getting
         desktopMain.dependencies {
-
+            implementation(libs.androidx.sqlite.bundled.jvm)
         }
     }
 }
