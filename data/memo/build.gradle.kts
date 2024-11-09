@@ -34,4 +34,7 @@ kotlin {
 dependencies {
     add("kspDesktop", libs.room.compiler)
 }
+
+room {
+    schemaDirectory("$projectDir/schemas")
 }
