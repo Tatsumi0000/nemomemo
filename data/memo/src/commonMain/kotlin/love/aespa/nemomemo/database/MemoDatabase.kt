@@ -8,12 +8,15 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.RoomDatabase
 import androidx.room.RoomDatabaseConstructor
+import androidx.room.TypeConverters
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
+import love.aespa.nemomemo.converter.DateConverter
 import love.aespa.nemomemo.entity.Memo
 
 @Database(entities = [Memo::class], version = 1)
 @ConstructedBy(MemoDatabaseConstructor::class)
+@TypeConverters(DateConverter::class)
 abstract class MemoDatabase: RoomDatabase() {
     abstract fun getDao(): MemoDao
 }
