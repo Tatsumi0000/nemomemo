@@ -5,6 +5,8 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.RoomDatabaseConstructor
 import androidx.room.TypeConverters
+import androidx.sqlite.driver.bundled.BundledSQLiteDriver
+import kotlinx.coroutines.Dispatchers
 import love.aespa.nemomemo.converter.DateConverter
 import love.aespa.nemomemo.dao.MemoDao
 import love.aespa.nemomemo.entity.Memo
@@ -19,4 +21,13 @@ abstract class MemoDatabase: RoomDatabase() {
 @Suppress("NO_ACTUAL_FOR_EXPECT")
 expect object MemoDatabaseConstructor : RoomDatabaseConstructor<MemoDatabase> {
     override fun initialize(): MemoDatabase
+}
+
+fun getRoomDatabase(
+    builder: RoomDatabase.Builder<MemoDatabase>
+): MemoDatabase {
+    return builder
+        .setDriver(BundledSQLiteDriver())
+        .setQueryCoroutineContext(Dispatchers.IO)
+        .build()
 }
