@@ -32,6 +32,11 @@ kotlin {
         desktopMain.dependencies {
             implementation(libs.androidx.sqlite.bundled.jvm)
         }
+
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+            implementation(libs.kotlinx.coroutines.test)
+        }
     }
 }
 
