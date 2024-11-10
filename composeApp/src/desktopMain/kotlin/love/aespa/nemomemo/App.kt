@@ -12,7 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import kotlinx.coroutines.launch
 import love.aespa.nemomemo.database.entity.Memo
-import love.aespa.nemomemo.di.appModules
+import love.aespa.nemomemo.di.dataMemoModule
 import love.aespa.nemomemo.repository.MemoRepository
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -27,7 +27,7 @@ import java.util.Date
 @Preview
 fun App() {
     KoinApplication(application = {
-        modules(appModules())
+        modules(dataMemoModule())
     }) {
     val repository = koinInject<MemoRepository>()
 
