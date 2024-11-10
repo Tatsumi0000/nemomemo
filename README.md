@@ -1,7 +1,7 @@
 # 🫰 nemomemo [WIP]
 Nemomemo is memo application on desktop using KMP.
 
-The name Nemomemo was inspired by the song title [네모네모(nemonemo)](https://www.youtube.com/watch?v=MPp8hbuZwW0) by [YENA](https://yhfamily.co.kr/?module=Default&action=DefaultAt&sAt=007).
+The name nemomemo was inspired by the song title [네모네모(nemonemo)](https://www.youtube.com/watch?v=MPp8hbuZwW0) by [YENA](https://yhfamily.co.kr/?module=Default&action=DefaultAt&sAt=007).
 
 
 ## 💻 Development
