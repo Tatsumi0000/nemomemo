@@ -1,5 +1,9 @@
 package love.aespa.nemomemo.database
 
+import androidx.room.Room
+import androidx.sqlite.SQLiteDriver
+import androidx.sqlite.driver.bundled.BundledSQLiteDriver
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import love.aespa.nemomemo.database.dao.MemoDao
 import love.aespa.nemomemo.database.entity.Memo
@@ -7,6 +11,7 @@ import java.util.Date
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
+import kotlin.test.assertEquals
 
 class MemoDatabaseTest {
 
@@ -15,7 +20,7 @@ class MemoDatabaseTest {
 
     @BeforeTest
     fun setUp() {
-        db = getRoomDatabase(getDatabaseBuilder())
+        db = getInMemoryDataBase().setDriver(BundledSQLiteDriver()).build()
         dao = db.getDao()
     }
 
@@ -26,13 +31,18 @@ class MemoDatabaseTest {
 
     @Test
     fun getAllMemosOrderByIdAscTest() = runTest {
-        testData(testSize = 3).map { dao.insert(it) }
+        val testLength = 3
+        testData(testLength).map {
+            dao.insert(it)
+        }
+        val result = dao.getAllMemosOrderByIdAsc().first()
+        assertEquals(testLength, result.size)
     }
 
-
-    private fun testData(testSize: Int): List<Memo> {
-        val testData = List(testSize) { count ->
-            Memo(id = count, text = "Hoge-$count", createdAt = Date(), updatedAd = Date())
+    private fun testData(testLength: Int): List<Memo> {
+        val testData = List(testLength) { count ->
+            val count = count + 1
+            Memo(id = 0, text = "Hoge-$count", createdAt = Date(), updatedAd = Date())
         }
         return testData
     }
