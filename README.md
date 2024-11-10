@@ -1,5 +1,10 @@
-This is a Kotlin Multiplatform project targeting Desktop.
+# 🫰 nemomemo [WIP]
+Nemomemo is memo desktop application using KMP.
 
+The name Nemomemo was inspired by the song [네모네모(nemonemo)](https://www.youtube.com/watch?v=MPp8hbuZwW0) by [YENA](https://yhfamily.co.kr/?module=Default&action=DefaultAt&sAt=007).
+
+
+## 💻 Development
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
   - `commonMain` is for code that’s common for all targets.
