@@ -1,7 +1,5 @@
 package love.aespa.nemomemo.database
 
-import androidx.room.Room
-import androidx.sqlite.SQLiteDriver
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
@@ -46,5 +44,4 @@ class MemoDatabaseTest {
         }
         return testData
     }
-
 }
