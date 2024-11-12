@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.ksp)
     alias(libs.plugins.androidxRoom)
-    alias(libs.plugins.detekt)
+    alias(libs.plugins.detektGradlePlugin)
 }
 
 kotlin {

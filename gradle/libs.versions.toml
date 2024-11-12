@@ -27,6 +27,7 @@ androidx-sqlite-bundled-jvm = { group = "androidx.sqlite", name = "sqlite-bundle
 koin-bom = { group = "io.insert-koin", name = "koin-bom", version.ref = "koin" }
 koin-core = { group = "io.insert-koin", name = "koin-core" }
 koin-compose = { group = "io.insert-koin", name = "koin-compose" }
+detektGradlePlugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
 
 [plugins]
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
@@ -34,4 +35,9 @@ composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "k
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 androidxRoom = { id = "androidx.room", version.ref = "room" }
-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+detektGradlePlugin = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+
+[bundles]
+plugins = [
+    "detektGradlePlugin"
+]
