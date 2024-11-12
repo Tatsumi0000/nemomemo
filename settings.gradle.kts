@@ -31,3 +31,5 @@ dependencyResolutionManagement {
 include(":composeApp")
 include(":data:memo")
 include(":feature:textarea")
+include(":build-logic:convention")
+
