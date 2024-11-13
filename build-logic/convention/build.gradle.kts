@@ -20,3 +20,12 @@ kotlin {
 dependencies {
     implementation(libs.bundles.plugins)
 }
+
+gradlePlugin {
+    plugins {
+        register("detekt") {
+            id = "love.aespa.nemomemo.detekt"
+            implementationClass = "DetektPlugin"
+        }
+    }
+}
