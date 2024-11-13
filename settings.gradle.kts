@@ -2,6 +2,7 @@ rootProject.name = "nemomemo"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google {
             mavenContent {
@@ -31,5 +32,3 @@ dependencyResolutionManagement {
 include(":composeApp")
 include(":data:memo")
 include(":feature:textarea")
-include(":build-logic:convention")
-
