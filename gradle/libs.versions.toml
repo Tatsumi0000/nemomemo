@@ -9,6 +9,7 @@ ksp = "2.0.21-1.0.27"
 sqlite-bundled-jvm = "2.5.0-alpha11"
 koin = "4.0.0"
 detekt = "1.23.7"
+detektComposeRule = "0.4.16"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -29,6 +30,7 @@ koin-compose = { group = "io.insert-koin", name = "koin-compose" }
 # detekt
 detektGradlePlugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
 detektFormatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt" }
+detektComposeRule = { group = "io.nlopez.compose.rules", name = "detekt", version.ref = "detektComposeRule" }
 
 [plugins]
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
