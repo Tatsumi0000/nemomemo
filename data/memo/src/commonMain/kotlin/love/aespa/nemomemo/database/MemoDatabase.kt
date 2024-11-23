@@ -14,7 +14,7 @@ import love.aespa.nemomemo.database.entity.Memo
 @Database(entities = [Memo::class], version = 1)
 @ConstructedBy(MemoDatabaseConstructor::class)
 @TypeConverters(DateConverter::class)
-abstract class MemoDatabase: RoomDatabase() {
+abstract class MemoDatabase : RoomDatabase() {
     abstract fun getDao(): MemoDao
 }
 
@@ -24,7 +24,7 @@ expect object MemoDatabaseConstructor : RoomDatabaseConstructor<MemoDatabase> {
 }
 
 fun getRoomDatabase(
-    builder: RoomDatabase.Builder<MemoDatabase>
+    builder: RoomDatabase.Builder<MemoDatabase>,
 ): MemoDatabase {
     return builder
         .setDriver(BundledSQLiteDriver())

@@ -5,5 +5,5 @@ import love.aespa.nemomemo.repository.di.memoRepositoryModule
 
 fun dataMemoModule() = listOf(
     memoRepositoryModule,
-    databaseModule()
+    databaseModule(),
 )

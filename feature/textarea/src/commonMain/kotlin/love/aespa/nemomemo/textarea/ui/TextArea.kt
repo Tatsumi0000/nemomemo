@@ -15,20 +15,21 @@ import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
-fun textArea() {
+fun TextArea() {
     val text = rememberSaveable { mutableStateOf("asdfsdf") }
     TextField(
         value = text.value,
-        onValueChange = { text.value = it }, modifier = Modifier
+        onValueChange = { text.value = it },
+        modifier = Modifier
             .fillMaxWidth()
             .height(100.dp)
             .padding(10.dp)
-            .border(width = 1.dp, color = Color.Black, shape = RoundedCornerShape(8.dp))
+            .border(width = 1.dp, color = Color.Black, shape = RoundedCornerShape(8.dp)),
     )
 }
 
 @Composable
 @Preview
-fun textAreaPreview() {
-    textArea()
+fun TextAreaPreview() {
+    TextArea()
 }

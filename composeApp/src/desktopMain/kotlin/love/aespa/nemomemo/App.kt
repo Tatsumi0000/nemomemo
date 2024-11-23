@@ -14,54 +14,51 @@ import kotlinx.coroutines.launch
 import love.aespa.nemomemo.database.entity.Memo
 import love.aespa.nemomemo.di.dataMemoModule
 import love.aespa.nemomemo.repository.MemoRepository
-import org.jetbrains.compose.resources.painterResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
-
 import nemomemo.composeapp.generated.resources.Res
 import nemomemo.composeapp.generated.resources.compose_multiplatform
+import org.jetbrains.compose.resources.painterResource
 import org.koin.compose.KoinApplication
 import org.koin.compose.koinInject
 import java.util.Date
 
+// @Preview
 @Composable
-@Preview
 fun App() {
     KoinApplication(application = {
         modules(dataMemoModule())
     }) {
-    val repository = koinInject<MemoRepository>()
+        val repository = koinInject<MemoRepository>()
 
-    MaterialTheme {
-        var showContent by remember { mutableStateOf(false) }
-        val composableScope = rememberCoroutineScope()
-
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = {
-                showContent = !showContent
-                val memo = Memo(
-                    text = "aaa",
-                    createdAt = Date(),
-                    updatedAd = Date()
-                )
-                composableScope.launch {
-                    repository.insert(memo)
-                    repository.getAllMemosOrderByIdAsc().collect {
-                        println("========")
-                        println(it)
-                        println(it.size)
+        MaterialTheme {
+            var showContent by remember { mutableStateOf(false) }
+            val composableScope = rememberCoroutineScope()
+            Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+                Button(onClick = {
+                    showContent = !showContent
+                    val memo = Memo(
+                        text = "aaa",
+                        createdAt = Date(),
+                        updatedAd = Date(),
+                    )
+                    composableScope.launch {
+                        repository.insert(memo)
+                        repository.getAllMemosOrderByIdAsc().collect {
+                            println("========")
+                            println(it)
+                            println(it.size)
+                        }
                     }
+                }) {
+                    Text("Click me!")
                 }
-            }) {
-                Text("Click me!")
-            }
-            AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
-                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Image(painterResource(Res.drawable.compose_multiplatform), null)
-                    Text("Compose: $greeting")
+                AnimatedVisibility(showContent) {
+                    val greeting = remember { Greeting().greet() }
+                    Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+                        Image(painterResource(Res.drawable.compose_multiplatform), null)
+                        Text("Compose: $greeting")
+                    }
                 }
             }
         }
-    }
     }
 }
