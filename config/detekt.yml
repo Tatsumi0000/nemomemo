@@ -73,6 +73,8 @@ style:
       - 'RelaxedMockK'
       - 'InjectMockKs'
       - 'Preview'
+  WildcardImport:
+    active: false
 
 potential-bugs:
   active: true
@@ -96,4 +98,12 @@ formatting:
   TrailingCommaOnCallSite:
     active: true
   PackageName:
+    active: false
+  Filename:
+    active: false
+
+Compose:
+  ModifierMissing:
+    active: false
+  PreviewPublic:
     active: false
