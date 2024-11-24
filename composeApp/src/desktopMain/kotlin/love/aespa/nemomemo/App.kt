@@ -1,6 +1,7 @@
 package love.aespa.nemomemo
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -21,7 +22,7 @@ import org.koin.compose.KoinApplication
 import org.koin.compose.koinInject
 import java.util.Date
 
-// @Preview
+@Preview
 @Composable
 fun App() {
     KoinApplication(application = {
