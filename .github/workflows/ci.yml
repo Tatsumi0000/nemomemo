@@ -20,7 +20,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: UnitTest
-        run: ./gradlew data:memo:desktopTest
+        run: ./gradlew allTests
         
       -
         uses: k1LoW/octocov-action@v1
