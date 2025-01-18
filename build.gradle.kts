@@ -6,6 +6,6 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.androidxRoom) apply false
+    alias(libs.plugins.kotlinxKover) apply false
     id("love.aespa.nemomemo.detekt")
-    id("love.aespa.nemomemo.kover")
 }
