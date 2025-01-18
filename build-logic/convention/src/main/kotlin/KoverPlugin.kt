@@ -1,4 +1,5 @@
 import kotlinx.kover.gradle.plugin.dsl.KoverProjectExtension
+import kotlinx.kover.gradle.plugin.dsl.tasks.KoverReport
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
@@ -10,7 +11,7 @@ class KoverPlugin: Plugin<Project> {
 
             rootProject.subprojects {
                 if (this@subprojects.name == target.name) return@subprojects
-                this@subprojects.beforeEvaluate { // wrap with beforeEvaluate
+                this@subprojects.beforeEvaluate {
                     this@subprojects.pluginManager.apply(koverPlugin)
                 }
                 target.dependencies.add("kover", this@subprojects)
@@ -18,7 +19,11 @@ class KoverPlugin: Plugin<Project> {
 
             extensions.configure<KoverProjectExtension>("kover") {
                 reports {
-                    
+                    total {
+                        xml {
+                            xmlFile.set(rootProject.file("coverage.xml"))
+                        }
+                    }
                     filters {
                         excludes {
                             classes(
@@ -32,7 +37,6 @@ class KoverPlugin: Plugin<Project> {
                             )
                         }
                     }
-
                 }
             }
         }
