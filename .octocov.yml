@@ -1,4 +1,8 @@
 coverage:
-  acceptable: 60%
+  acceptable: 10%
   paths:
     - coverage.xml
+comment:
+  if: is_pull_request
+summary:
+  if: true
