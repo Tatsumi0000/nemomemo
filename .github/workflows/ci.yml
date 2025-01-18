@@ -21,6 +21,9 @@ jobs:
 
       - name: UnitTest
         run: ./gradlew allTests
-        
+
+      - name: Generate Coverage Report
+        run: ./gradlew koverXmlReport
+
       -
         uses: k1LoW/octocov-action@v1

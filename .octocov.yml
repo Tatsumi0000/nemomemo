@@ -1,2 +1,4 @@
 coverage:
   acceptable: 60%
+  paths:
+    - coverage.xml
