@@ -27,5 +27,9 @@ gradlePlugin {
             id = "love.aespa.nemomemo.detekt"
             implementationClass = "DetektPlugin"
         }
+        register("kover") {
+            id = "love.aespa.nemomemo.kover"
+            implementationClass = "KoverPlugin"
+        }
     }
 }
