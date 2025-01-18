@@ -5,7 +5,6 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     id("love.aespa.nemomemo.detekt")
-    id("love.aespa.nemomemo.kover")
 }
 
 kotlin {
